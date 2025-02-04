@@ -38,9 +38,9 @@ return {
       -- inherit = true,
       formatters_by_ft = {
         lua = { 'stylua' },
-        json = { 'fixjson' },
         cs = { 'csharpier' },
-        yaml = { 'yamlfix' },
+        -- json = { 'fixjson' },
+        -- yaml = { 'yamlfix' },
         -- Conform can also run multiple formatters sequentially
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
@@ -281,8 +281,8 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua',
         'csharpier',
-        'fixjson',
-        'yamlfix',
+        -- 'fixjson',
+        -- 'yamlfix',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
