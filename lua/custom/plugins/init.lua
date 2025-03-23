@@ -23,7 +23,7 @@ return {
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true, python = true }
+        local disable_filetypes = { c = true, cpp = true, cs = true, python = true }
         local lsp_format_opt
         if disable_filetypes[vim.bo[bufnr].filetype] then
           lsp_format_opt = 'never'
@@ -38,7 +38,7 @@ return {
       -- inherit = true,
       formatters_by_ft = {
         lua = { 'stylua' },
-        cs = { 'csharpier' },
+        -- cs = { 'csharpier' },
         -- json = { 'fixjson' },
         -- yaml = { 'yamlfix' },
         -- Conform can also run multiple formatters sequentially
@@ -214,7 +214,7 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         clangd = {},
-        -- gopls = {},
+        gopls = {},
         ruff = {},
         pyright = {},
         rust_analyzer = {},
